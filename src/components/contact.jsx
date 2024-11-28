@@ -57,6 +57,9 @@ export const Contact = (props) => {
       }
     );
   };
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   
  return (
   <div>
@@ -186,19 +189,21 @@ export const Contact = (props) => {
               </p>
             <div className="contact-item">
               <p>
-                <span>
-                  <i className="fa fa-envelope-o"></i> Email
-                </span>{" "}
+                <span style={{ fontSize: '17px' }}>
+                  <i className="fa fa-envelope-o"></i> Email:
+                  <br />
                 {props.data ? props.data.email : "loading"}
+                </span>{" "}
               </p>
             </div>
             <p>
-                <span>
+                <span style={{ fontSize: '18px' }}>
                   <i className="fa fa-map-marker"></i> Head Office Address:
-                </span>
                 <br />
                 {props.data ? props.data.address : "loading"}
+                </span>
               </p>
+              
               <br />
           </div>
           {/* <div className="col-md-12">
@@ -229,7 +234,7 @@ export const Contact = (props) => {
       <div id="footer">
         <div className="container text-center">
           <p>
-            &copy; 2024 Sunway Energy Solutions
+            &copy; 2024 Sunway Energy Solutions. Developed by <a href="https://muhamed-yasin.github.io/" target="_blank" rel="noopener noreferrer">Muhamed Yasin</a>
           </p>
         </div>
       </div>
