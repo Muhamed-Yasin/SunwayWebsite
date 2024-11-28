@@ -195,7 +195,7 @@ export const Contact = (props) => {
             </div>
             <p>
                 <span style={{ fontSize: '18px' }}>
-                  <i className="fa fa-map-marker"></i> Head Office Address:
+                  <i className="fa fa-map-marker"></i> Head Office:
                 <br />
                 {props.data ? props.data.address : "loading"}
                 </span>
