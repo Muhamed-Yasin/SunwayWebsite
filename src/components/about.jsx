@@ -30,11 +30,10 @@ export const About = (props) => {
                         ))
                       : "loading"}
                   </ul>
-                  
-                </div>
-                <div className="col-lg-4 col-sm-2 col-xs-1">
-                <img src="img/KSEB_Logo_2022 (1).png" className="img-responsive" alt="" />{" "}
-                <img src="img/MNRE_Logo_2022.png" className="img-responsive" alt="" />{" "} 
+                  <div className="image-container">
+  <img src="img/KSEB_Logo_2022 (1) (1).png" className="img-responsive" alt="" />
+  <img src="img/MNRE_Logo_2022.png" className="img-responsive" alt="" />
+</div>
                 </div>
               </div>
             </div>

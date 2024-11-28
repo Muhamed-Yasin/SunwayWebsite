@@ -218,6 +218,14 @@ a:focus,
   background-size: cover;
   -o-background-size: cover;
 }
+.image-container {
+  display: flex;
+  align-items: center;
+}
+
+.image-container img {
+  margin-right: 10px; /* Adjust the spacing between images as needed */
+}
 .intro .overlay {
   background: rgba(0, 0, 0, 0.2);
 }
