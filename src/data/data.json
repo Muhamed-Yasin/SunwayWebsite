@@ -1,0 +1,170 @@
+{
+  "Header": {
+    "title": "Quality solar for a brighter future",
+    "paragraph": ""
+  },
+  "About": {
+    "paragraph": "At Sunway Energy Solutions, we are committed to delivering the highest standards of Quality, Reliability, and Cost-effectiveness in every project we undertake. Our expertise spans across Electrical Systems, Solar PV Solutions, Inverters, and Battery Storage, backed by a highly skilled team of engineers, technicians, and fabricators. Our team combines industry veterans and well-trained professionals, ensuring every solution is tailored to meet your unique energy needs.",
+    "Why": [
+      "Proven Expertise",
+      "Comprehensive Services",
+      "Highly Skilled Team",
+      "Commitment to Excellence"
+    ],
+    "Why2": [
+      "Customer-Centric Approach",
+      "Cutting-Edge Technology",
+      "Proven Track Record",
+      "Sustainable & Future-Ready Solutions"
+    ]
+  },
+  "Gallery": [
+    {
+      "title": "",
+      "largeImage": "img/portfolio/01-large.jpg",
+      "smallImage": "img/portfolio/01-small.jpg"
+    },
+    {
+      "title": "",
+      "largeImage": "img/portfolio/02-large.jpg",
+      "smallImage": "img/portfolio/02-small.jpg"
+    },
+    {
+      "title": "",
+      "largeImage": "img/portfolio/03-large.jpg",
+      "smallImage": "img/portfolio/03-small.jpg"
+    },
+    {
+      "title": "",
+      "largeImage": "img/portfolio/04-large.jpg",
+      "smallImage": "img/portfolio/04-small.jpg"
+    },
+    {
+      "title": "",
+      "largeImage": "img/portfolio/05-large.jpg",
+      "smallImage": "img/portfolio/05-small.jpg"
+    },
+    {
+      "title": "",
+      "largeImage": "img/portfolio/06-large.jpg",
+      "smallImage": "img/portfolio/06-small.jpg"
+    }
+  ],
+  "Services": [
+  {
+    "icon": "fa fa-sun-o",
+    "name": "Solar Power Plant Installation",
+    "text": "Expert installation of solar power plants, ensuring maximum efficiency and reliability for your energy needs."
+  },
+  {
+    "icon": "fa fa-cogs",
+    "name": "Customized Solar Power System Design",
+    "text": "Tailored designs for solar power systems, optimizing performance and aligning with your unique requirements."
+  },
+  {
+    "icon": "fa fa-line-chart",
+    "name": "Energy Audits & Efficiency Solutions",
+    "text": "Comprehensive energy audits and efficiency solutions to reduce energy waste and maximize savings."
+  },
+  {
+    "icon": "fa fa-wrench",
+    "name": "Maintenance & Repair Services",
+    "text": "Reliable maintenance and repair services to keep your solar systems operating smoothly and efficiently."
+  },  {
+        "icon": "fa fa-bolt",
+    "name": "Battery Storage Solutions",
+    "text": "Advanced battery storage solutions to store and utilize solar energy effectively, ensuring power availability 24/7."
+  },
+  {
+    "icon": "fa fa-lightbulb-o",
+    "name": "Consultation & Technical Support",
+    "text": "Professional consultation and technical support to guide you through every stage of your solar energy journey."
+  }
+],
+
+  "Testimonials": [
+    {
+      "img": "img/testimonials/01.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/02.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "Johnathan Doe"
+    },
+    {
+      "img": "img/testimonials/03.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/04.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "Johnathan Doe"
+    },
+    {
+      "img": "img/testimonials/05.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "John Doe"
+    },
+    {
+      "img": "img/testimonials/06.jpg",
+      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "name": "Johnathan Doe"
+    }
+  ],
+  "Team": [
+    {
+      "img": "img/team/01.jpg",
+      "name": "John Doe",
+      "job": "Director"
+    },
+    {
+      "img": "img/team/02.jpg",
+      "name": "Mike Doe",
+      "job": "Senior Designer"
+    },
+    {
+      "img": "img/team/03.jpg",
+      "name": "Jane Doe",
+      "job": "Senior Designer"
+    },
+    {
+      "img": "img/team/04.jpg",
+      "name": "Karen Doe",
+      "job": "Project Manager"
+    }
+  ],
+  "Contact": {
+    "address": "Valiyara Chambers, Edavanakkad, Ernakulam Pin: 682502",
+    "phone": "+91 8504822396",
+    "email": "energysolutionssunway@gmail.com",
+    "facebook": "",
+    "twitter": "",
+    "youtube": ""
+  },
+"Features": [
+  {
+    "icon": "fa fa-sun-o",
+    "title": "Expertise and Experience",
+    "text": "A proven track record in designing, installing, and maintaining solar systems, backed by a skilled team of engineers and technicians."
+  },
+  {
+    "icon": "fa fa-cogs",
+    "title": "Customized Solutions",
+    "text": "Tailored solar power solutions designed to meet specific energy requirements, ensuring maximum efficiency and cost-effectiveness."
+  },
+  {
+    "icon": "fa fa-check-circle",
+    "title": "Commitment to Quality",
+    "text": "Use of high-quality materials and cutting-edge technology, ensuring durable and reliable solar systems that provide long-term benefits."
+  },
+  {
+    "icon": "fa fa-life-ring",
+    "title": "Comprehensive Support",
+    "text": "Offering end-to-end services, including consultation, system design, installation, maintenance, and technical support to ensure a seamless experience."
+  }
+]
+
+}
