@@ -59,7 +59,8 @@ export const Contact = (props) => {
   };
   
  return (
-  <>      <div id="contact">
+  <div>
+  <div id="contact" className="contact-container">
         <div className="container">
           <div className="col-md-8">
             <div className="row">
@@ -142,49 +143,47 @@ export const Contact = (props) => {
           </div>
           <div className="col-md-3 col-md-offset-1 contact-info">
             <div className="contact-item">
-              <h3>Contact Info</h3>
-              <p>
-                <span>
-                  <i className="fa fa-map-marker"></i> Head Office Address
-                </span>
-                {props.data ? props.data.address : "loading"}
-              </p>
-            </div>
-            <div className="contact-item">
-              <p>
-                <span>
-                  <i className="fa fa-phone"></i> Our Locations
-                </span>{" "}
-                Aluva: 
-                <br/>
-                Yousuf: 8304822396
-                <br/>
-                Edavanakkad:
-                <br/>
-                Siddick Valiyara: 9447299795
-                <br/>
-                Kothamangalam:
-                <br/>
-                Ali: 9496663623
-                <br/>
-                Perumbavoor:
-                <br/> 
-                Naseer: 9037388544
-                <br />
-                Kakkanad:
-                <br/>
-                Abdul Kalam: 7907723901
-              </p>
-              <p>
+              <h3>Contact Us:</h3>
                 <a
                   href="https://wa.me/+917907723901?text=Hello%20Sunway%20Energy%20Solutions,%20I%20would%20like%20to%20chat%20with%20you."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-custom btn-lg"
+                  style={{ backgroundColor: 'white', color: 'green', margin: '5px', padding: '10px 15px'  }}
                 ><i className="fa fa-whatsapp"></i>Chat on WhatsApp
                 </a>
-              </p>
             </div>
+                            <p>
+                <span style={{ fontSize: '18px' }}>
+                Aluva:
+                <br />
+                  <i className="fa fa-phone"></i> Yousuf: 8304822396
+                </span>{" "}
+                <br />
+                <span style={{ fontSize: '18px' }}>
+                Edavanakkad:
+                <br />
+                  <i className="fa fa-phone"></i> Siddick Valiyara: 9447299795
+                </span>{" "}
+                <br />
+                <span style={{ fontSize: '18px' }}>
+                Kothamangalam:
+                <br />
+                  <i className="fa fa-phone"></i> Ali: 9496663623
+                </span>{" "}
+                <br />
+                <span style={{ fontSize: '18px' }}>
+                Perumbavoor:
+                <br />
+                  <i className="fa fa-phone"></i> Naseer: 9037388544
+                </span>{" "}
+                <br />
+                <span style={{ fontSize: '18px' }}>
+                Kakkanad:
+                <br />
+                  <i className="fa fa-phone"></i> Abdul Kalam: 7907723901
+                </span>{" "}
+              </p>
             <div className="contact-item">
               <p>
                 <span>
@@ -193,6 +192,14 @@ export const Contact = (props) => {
                 {props.data ? props.data.email : "loading"}
               </p>
             </div>
+            <p>
+                <span>
+                  <i className="fa fa-map-marker"></i> Head Office Address:
+                </span>
+                <br />
+                {props.data ? props.data.address : "loading"}
+              </p>
+              <br />
           </div>
           {/* <div className="col-md-12">
             <div className="row">
@@ -226,7 +233,6 @@ export const Contact = (props) => {
           </p>
         </div>
       </div>
-      </>
-
+  </div>
   );
 };

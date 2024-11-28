@@ -7,6 +7,8 @@ html {
   font-weight: 400;
   width: 100% !important;
   height: 100% !important;
+  margin: 0;
+  padding: 0;
 }
 h2,
 h3,
@@ -367,7 +369,7 @@ header .intro-text {
 /* Services Section */
 #services {
   padding: 100px 0;
-  background: linear-gradient(to right, #67a932, #849e01);  
+   background: linear-gradient(to right, #2c8701,#0b4e00);  
   color: #fff;
 }
 #services .service-desc {
@@ -530,7 +532,7 @@ header .intro-text {
 /* Contact Section */
 #contact {
   padding: 100px 0 60px;
-  background: linear-gradient(to right, #67a932, #849e01);  
+  background: linear-gradient(to right, #2c8701,#0b4e00);  
   color: rgba(255, 255, 255, 0.75);
 }
 #contact .section-title {
@@ -542,8 +544,7 @@ header .intro-text {
 #contact h2 {
   color: #fff;
   margin-top: 10px;
-  margin-bottom: 15px;
-  padding-bottom: 15px;
+
 }
 #contact .section-title h2::after {
   position: absolute;
@@ -557,12 +558,12 @@ header .intro-text {
 #contact h3 {
   color: #fff;
   margin-top: 80px;
-  margin-bottom: 25px;
-  padding-bottom: 20px;
   font-weight: 400;
 }
-#contact form {
-  padding-top: 20px;
+#contact h4 {
+  color: #fff;
+  margin-top: 80px;
+  font-weight: 400;
 }
 #contact .text-danger {
   color: #cc0033;
@@ -623,7 +624,6 @@ label {
 }
 #contact .contact-item span {
   color: rgba(255, 255, 255, 1);
-  margin-bottom: 10px;
   display: block;
 }
 #contact .contact-item i.fa {
@@ -631,8 +631,7 @@ label {
 }
 #contact .social {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding-top: 50px;
-  margin-top: 50px;
+
   text-align: center;
 }
 #contact .social ul li {
@@ -653,6 +652,11 @@ label {
   color: #fdac60;
   background: #fff;
 }
+.contact-container {
+  margin: 0px; /* Adjust as needed */
+  padding: 0px; /* Adjust as needed */
+}
+
 /* Footer Section*/
 #footer {
   background: #f6f6f6;
