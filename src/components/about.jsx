@@ -23,9 +23,6 @@ export const About = (props) => {
                         ))
                       : "loading"}
                   </ul>
-                  <img src="img/KSEB_Logo_2022 (1).png" className="img-responsive" alt="" />{" "}
-                </div>
-                <div className="col-lg-6 col-sm-6 col-xs-12">
                   <ul>
                     {props.data
                       ? props.data.Why2.map((d, i) => (
@@ -33,7 +30,11 @@ export const About = (props) => {
                         ))
                       : "loading"}
                   </ul>
-                  <img src="img/MNRE_Logo_2022.png" className="img-responsive" alt="" />{" "}
+                  
+                </div>
+                <div className="col-lg-4 col-sm-2 col-xs-1">
+                <img src="img/KSEB_Logo_2022 (1).png" className="img-responsive" alt="" />{" "}
+                <img src="img/MNRE_Logo_2022.png" className="img-responsive" alt="" />{" "} 
                 </div>
               </div>
             </div>
