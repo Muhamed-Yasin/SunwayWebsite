@@ -145,7 +145,7 @@ export const Contact = (props) => {
             <div className="contact-item">
               <h3>Contact Us:</h3>
                 <a
-                  href="https://wa.me/+917907723901?text=Hello%20Sunway%20Energy%20Solutions,%20I%20would%20like%20to%20chat%20with%20you."
+                  href="https://wa.me/+918304822396?text=Hello%20Sunway%20Energy%20Solutions,%20I%20would%20like%20to%20chat%20with%20you."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-custom btn-lg"
