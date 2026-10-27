@@ -1,240 +1,94 @@
-import { useState } from "react";
 import React from "react";
-import emailjs from "emailjs-com";
 
-const initialState = {
-  name: "",
-  email: "",
-  phone: "",
-  message: "",
-};
 export const Contact = (props) => {
-  const [{ name, email, phone, message }, setState] = useState(initialState);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setState((prevState) => ({ ...prevState, [name]: value }));
-  };
-  const clearState = () => setState({ ...initialState });
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    console.log(name, email, phone, message);
-  
-    // Replace below with your own Service ID, Template ID, and Public Key from your EmailJS account
-    const serviceID = "service_twkijz8";
-    const templateID = "template_o9h3b4k";
-    const publicKey = "JFLJ-1TYjWG2K8G4e";
-  
-    // Send form data to yourself
-    emailjs.sendForm(serviceID, templateID, e.target, publicKey).then(
-      (result) => {
-        console.log(result.text);
-        setIsSubmitting(false); // Reset the submitting state
-      },
-      (error) => {
-        console.log(error.text);
-        setIsSubmitting(false); // Reset the submitting state
-      }
-    );
-  
-    // Send acknowledgment email to the user
-    const acknowledgmentTemplateID = "template_6f5rl8e";
-    const acknowledgmentParams = {
-      user_name: name,
-      user_email: email,
-    };
-  
-    emailjs.send(serviceID, acknowledgmentTemplateID, acknowledgmentParams, publicKey).then(
-      (result) => {
-        console.log("Acknowledgment email sent:", result.text);
-        clearState(); // Clear the form
-      },
-      (error) => {
-        console.log("Failed to send acknowledgment email:", error.text);
-        clearState(); // Clear the form
-      }
-    );
-  };
-  
- return (
-  <div>
-  <div id="contact" className="contact-container">
-        <div className="container">
-          <div className="col-md-8">
-            <div className="row">
-              <div className="section-title">
-                <h2>Get In Touch</h2>
-                <p>
-                  Please fill out the form below to send us an email and we will
-                  get back to you as soon as possible.
-                </p>
-              </div>
-              <form name="sentMessage" validate onSubmit={handleSubmit}>
-                <div className="row">
-                  <div className="col-md-4">
-                    <div className="form-group">
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        className="form-control"
-                        placeholder="Name"
-                        value={name}
-                        required
-                        onChange={handleChange}
-                      />
-                      <p className="help-block text-danger"></p>
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div className="form-group">
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        className="form-control"
-                        placeholder="Email"
-                        value={email}
-                        required
-                        onChange={handleChange}
-                      />
-                      <p className="help-block text-danger"></p>
-                    </div>
-                  </div>
-                
-
-                  <div className="col-md-4">
-                    <div className="form-group">
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        className="form-control"
-                        placeholder="Phone"
-                        value={phone}
-                        required
-                        onChange={handleChange}
-                      />
-                      <p className="help-block text-danger"></p>
-                    </div>
-                  </div>
+  return (
+    <div id="contact" className="modern-contact">
+      <div className="container">
+        <div className="contact-grid">
+          
+          {/* Left Side: Primary Focus - Contact Form */}
+          <div className="contact-form-section">
+            <div className="section-title">
+              <h2>Get In Touch</h2>
+            </div>
+            <p>Please fill out the form below to send us an email and we will get back to you as soon as possible.</p>
+            
+            <form name="sentMessage" id="contactForm">
+              <div className="form-row">
+                <div className="form-group">
+                  <input type="text" id="name" className="modern-input" placeholder="Name" required />
                 </div>
                 <div className="form-group">
-                  <textarea
-                    name="message"
-                    id="message"
-                    className="form-control"
-                    rows="4"
-                    placeholder="Message"
-                    value={message}
-                    required
-                    onChange={handleChange}
-                  ></textarea>
-                  <p className="help-block text-danger"></p>
+                  <input type="email" id="email" className="modern-input" placeholder="Email" required />
                 </div>
-                <div id="success"></div>
-                <button type="submit" className="btn btn-custom btn-lg">
-                {isSubmitting ? "Submitting..." : "Send"}
-                </button>
-              </form>
-            </div>
+              </div>
+              <div className="form-group">
+                <textarea name="message" id="message" className="modern-input modern-textarea" rows="7" placeholder="Message" required></textarea>
+              </div>
+              <button type="submit" className="btn-solid">Send Message</button>
+            </form>
           </div>
-          <div className="col-md-3 col-md-offset-1 contact-info">
-            <div className="contact-item">
-              <h3>Contact Us:</h3>
-                <a
-                  href="https://wa.me/+918304822396?text=Hello%20Sunway%20Energy%20Solutions,%20I%20would%20like%20to%20chat%20with%20you."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-custom btn-lg"
-                  style={{ backgroundColor: 'white', color: 'green', margin: '5px', padding: '10px 15px'  }}
-                ><i className="fa fa-whatsapp"></i>Chat on WhatsApp
-                </a>
+
+          {/* Right Side: Head Office, WhatsApp & Branch Contacts */}
+          <div className="contact-info">
+            <div className="section-title">
+              <h2>Contact Us</h2>
             </div>
-                            <p>
-                <span style={{ fontSize: '18px' }}>
-                Aluva:
-                <br />
-                  <i className="fa fa-phone"></i> Yousuf: 8304822396
-                </span>{" "}
-                <br />
-                <span style={{ fontSize: '18px' }}>
-                Edavanakkad:
-                <br />
-                  <i className="fa fa-phone"></i> Siddick Valiyara: 9447299795
-                </span>{" "}
-                <br />
-                <span style={{ fontSize: '18px' }}>
-                Kothamangalam:
-                <br />
-                  <i className="fa fa-phone"></i> Ali: 9496663623
-                </span>{" "}
-                <br />
-                <span style={{ fontSize: '18px' }}>
-                Perumbavoor:
-                <br />
-                  <i className="fa fa-phone"></i> Naseer: 9037388544
-                </span>{" "}
-                <br />
-                <span style={{ fontSize: '18px' }}>
-                Kakkanad:
-                <br />
-                  <i className="fa fa-phone"></i> Abdul Kalam: 7907723901
-                </span>{" "}
-              </p>
-            <div className="contact-item">
-              <p>
-                <span style={{ fontSize: '17px' }}>
-                  <i className="fa fa-envelope-o"></i> Email:
-                  <br />
-                {props.data ? props.data.email : "loading"}
-                </span>{" "}
-              </p>
+            
+            <div className="whatsapp-container">
+              <a href="https://wa.me/919037388544" target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
+                <i className="fa fa-whatsapp"></i> Chat on WhatsApp
+              </a>
             </div>
-            <p>
-                <span style={{ fontSize: '18px' }}>
-                  <i className="fa fa-map-marker"></i> Head Office:
-                <br />
-                {props.data ? props.data.address : "loading"}
-                </span>
-              </p>
-              
-              <br />
-          </div>
-          {/* <div className="col-md-12">
-            <div className="row">
-              <div className="social">
-                <ul>
-                  <li>
-                    <a href={props.data ? props.data.facebook : "/"}>
-                      <i className="fa fa-facebook"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={props.data ? props.data.twitter : "/"}>
-                      <i className="fa fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={props.data ? props.data.youtube : "/"}>
-                      <i className="fa fa-youtube"></i>
-                    </a>
-                  </li>
-                </ul>
+
+            {/* Head Office / Main Address Box */}
+            <div className="head-office-card">
+              <div className="info-item-head">
+                <i className="fa fa-map-marker"></i>
+                <div>
+                  <strong>Head Office</strong>
+                  <span>Valiyara Chambers, Edavanakkad, Ernakulam, Kerala, India Pin: 682502</span>
+                </div>
               </div>
             </div>
-          </div> */}
+
+            <p className="branch-title-text">
+              Our Regional Representatives:
+            </p>
+
+            {/* Compact Branch Cards Grid */}
+            <div className="branch-contacts-grid">
+              <div className="branch-card">
+                <strong>Aluva</strong>
+                <span>Yousuf: <a href="tel:8304822396">83048 22396</a></span>
+              </div>
+              <div className="branch-card">
+                <strong>Edavanakkad</strong>
+                <span>Siddick Valiyara: <a href="tel:9447299795">94472 99795</a></span>
+              </div>
+              <div className="branch-card">
+                <strong>Kothamangalam</strong>
+                <span>Ali: <a href="tel:9496663623">94966 63623</a></span>
+              </div>
+              <div className="branch-card">
+                <strong>Perumbavoor</strong>
+                <span>Naseer: <a href="tel:9037388544">90373 88544</a></span>
+              </div>
+              <div className="branch-card full-width-card">
+                <strong>Kakkanad</strong>
+                <span>Abdul Kalam: <a href="tel:7907723901">79077 23901</a></span>
+              </div>
+            </div>
+
+            <div className="email-item">
+              <i className="fa fa-envelope-o"></i>
+              <span>energysolutionssunway@gmail.com</span>
+            </div>
+
+          </div>
+
         </div>
       </div>
-      <div id="footer">
-        <div className="container text-center">
-          <p>
-            &copy; 2024 Sunway Energy Solutions. Developed by <a href="https://muhamed-yasin.github.io/" target="_blank" rel="noopener noreferrer">Muhamed Yasin</a>
-          </p>
-        </div>
-      </div>
-  </div>
+    </div>
   );
 };

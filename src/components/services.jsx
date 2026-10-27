@@ -1,20 +1,17 @@
-import React from "react";
-
 export const Services = (props) => {
   return (
-    <div id="services" className="text-center">
+    <div id="services" className="modern-services">
       <div className="container">
-        <div className="section-title">
+        
+        <div className="section-title text-center">
           <h2>Our Services</h2>
-          <p>
-          Explore our wide range of services designed to meet all your solar energy needs
-          </p>
+          <p>Comprehensive solar solutions tailored for residential and commercial needs.</p>
         </div>
-        <div className="row">
+        
+        <div className="services-grid">
           {props.data
             ? props.data.map((d, i) => (
-                <div key={`${d.name}-${i}`} className="col-md-4">
-                  {" "}
+                <div key={`${d.name}-${i}`} className="service-card">
                   <i className={d.icon}></i>
                   <div className="service-desc">
                     <h3>{d.name}</h3>
@@ -24,6 +21,7 @@ export const Services = (props) => {
               ))
             : "loading"}
         </div>
+        
       </div>
     </div>
   );

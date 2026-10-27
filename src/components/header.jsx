@@ -1,39 +1,30 @@
+import React from "react";
+
 export const Header = (props) => {
   return (
-    <header id="header" className="modern-header">
-      <div className="hero-grid">
-        
-        {/* Left Side: Content */}
+    <header 
+      id="header" 
+      className="modern-header" 
+      // Update "img/intro-bg.jpg" to your actual background image path
+      style={{ backgroundImage: `url(img/intro-bg.jpg)` }} 
+    >
+      {/* This div triggers the CSS gradient fade */}
+      <div className="hero-overlay"></div>
+      
+      <div className="container">
         <div className="hero-content">
-          <h1>Quality Solar <br/><span>For a Brighter Future</span></h1>
-          <p>Kerala's Solar Experts, from Design to Installation.</p>
+          <h1>
+            {props.data ? props.data.title : "Powering a Brighter Future"}
+          </h1>
+          <p>
+            {props.data ? props.data.paragraph : "We're creating an all-in-one home and commercial energy solution that transforms how we live, connect, and interact with the world around us."}
+          </p>
           
           <div className="hero-actions">
             <a href="#contact" className="btn-solid">Get a Free Quote</a>
             <a href="#services" className="btn-outline">Our Services</a>
           </div>
-
-          <div className="hero-stats">
-            <div className="stat-item">
-              <strong>50+</strong>
-              <span>Projects</span>
-            </div>
-            <div className="stat-item">
-              <strong>Tier 1</strong>
-              <span>Equipment</span>
-            </div>
-            <div className="stat-item">
-              <strong>100%</strong>
-              <span>Green</span>
-            </div>
-          </div>
         </div>
-
-        {/* Right Side: Image */}
-        <div className="hero-image">
-          <img src="img/intro-bg.jpg" alt="Solar panels installed in Kerala" />
-        </div>
-
       </div>
     </header>
   );
