@@ -164,6 +164,11 @@
     "icon": "fa fa-life-ring",
     "title": "Comprehensive Support",
     "text": "Offering end-to-end services, including consultation, system design, installation, maintenance, and technical support to ensure a seamless experience."
+  },
+  {
+    "icon":"fa fa-line-chart",
+    "title":"Smart Monitoring",
+    "text":"Track your energy production and consumption in real-time via our integrated mobile application."
   }
 ]
 

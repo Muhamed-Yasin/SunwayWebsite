@@ -80,7 +80,9 @@ hr {
 #menu.navbar-default {
   background-color: #fff;
   border-color: rgba(231, 231, 231, 0);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  box-shadow: none !important; /* Removes the floating shadow */
+  border-bottom: 1px solid #f2f2f2; /* Optional: adds a very subtle crisp line instead */
+  margin-bottom: 0 !important; /* Prevents gaps between navbar and hero */
 }
 #menu a.navbar-brand {
   font-family: "Raleway", sans-serif;
@@ -208,163 +210,411 @@ a:focus,
   outline: none;
   outline-offset: none;
 }
-/* Header Section */
-.intro {
-  display: table;
-  width: 100%;
-  padding: 0;
-  background: url(../img/intro-bg.jpg) center center no-repeat;
-  background-color: #e5e5e5;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-}
-.image-container {
-  display: flex;
-  align-items: center;
+
+
+/* =========================================
+   NAVBAR FIX (Keep this to stop the melding)
+   ========================================= */
+#menu.navbar-default {
+  background-color: #fff;
+  border: none !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  margin-bottom: 0 !important;
 }
 
-.image-container img {
-  margin-right: 10px; /* Adjust the spacing between images as needed */
+/* =========================================
+   MODERN ECO-TECH HERO (CSS GRID)
+   ========================================= */
+.modern-header {
+  width: 100%;
+  min-height: calc(100vh) !important;
+  display: flex; /* The magic bullet for the height bug */
+  flex-direction: column;
+  overflow: hidden;
 }
-.intro .overlay {
-  background: rgba(0, 0, 0, 0.2);
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  flex-grow: 1; /* Forces the grid to expand and fill the 100vh */
 }
-.intro h1 {
+
+/* --- Left Side: Content --- */
+.hero-content {
+  background-color: #f8fafc; /* Subtle tint to separate from navbar */
+  padding: 0 12%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Flawless vertical centering */
+  align-items: flex-start;
+}
+
+.hero-content h1 {
   font-family: "Raleway", sans-serif;
-  color: #fff;
-  font-size: 82px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-.intro h1 span {
+  font-size: 56px;
   font-weight: 800;
+  color: #1a2b3c;
+  line-height: 1.15;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero-content h1 span {
   color: #fbb65c;
 }
-.intro p {
-  color: #fff;
-  font-size: 22px;
-  font-weight: 300;
-  line-height: 30px;
-  margin: 0 auto;
+
+.hero-content p {
+  font-size: 20px;
+  color: #556b82;
+  margin-bottom: 40px;
+}
+
+/* --- Buttons --- */
+.hero-actions {
+  display: flex;
+  gap: 20px;
   margin-bottom: 60px;
 }
-header .intro-text {
-  padding-top: 350px;
-  padding-bottom: 200px;
-  text-align: center;
-}
-/* Features Section */
-#features {
-  padding: 100px 0;
-  background: #f9f9f9;
+
+.btn-solid, .btn-outline {
+  font-family: "Raleway", sans-serif;
+  padding: 16px 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-#features .feature-item {
-  margin-bottom: 30px;
+.btn-solid {
+  background-color: #fbb65c;
+  color: #1a2b3c;
+  border: 2px solid #fbb65c;
 }
 
-#features .feature-item img {
-  max-width: 100%;
-  height: auto;
+.btn-solid:hover {
+  background-color: transparent;
+  color: #fbb65c;
 }
 
-#features .feature-item h3 {
-  font-size: 24px;
-  margin-top: 20px;
+.btn-outline {
+  background-color: transparent;
+  color: #1a2b3c;
+  border: 2px solid #1a2b3c;
 }
 
-#features .feature-item p {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-/* Flexbox layout for features */
-#features .features-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-#features .feature-item {
-  flex: 1 1 calc(33.333% - 20px); /* 3 items per row with some margin */
-  box-sizing: border-box;
-  margin: 10px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  #features .feature-item {
-    flex: 1 1 calc(50% - 20px); /* 2 items per row on medium screens */
-  }
-}
-
-@media (max-width: 768px) {
-  #features .feature-item {
-    flex: 1 1 100%; /* 1 item per row on small screens */
-  }
-}
-#features i.fa {
-  font-size: 38px;
-  margin-bottom: 20px;
-  transition: all 0.5s;
+.btn-outline:hover {
+  background-color: #1a2b3c;
   color: #fff;
-  width: 100px;
-  height: 100px;
-  padding: 30px 0;
-  border-radius: 50%;
-  background: linear-gradient(to right, #ffdb63 0%, #fbc15c 100%);
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
 }
-/* About Section */
-#about {
+
+/* --- Trust Bar / Stats --- */
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 30px;
+  width: 100%;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-item strong {
+  font-size: 32px;
+  color: #1a2b3c;
+  font-family: "Raleway", sans-serif;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.stat-item span {
+  font-size: 14px;
+  color: #556b82;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* --- Right Side: Image --- */
+.hero-image {
+  width: 100%;
+  height: 100%; /* Force image container to fill grid cell */
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Zooms image nicely without distortion */
+  display: block;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr; /* Stacks the columns on small screens */
+  }
+  .modern-header {
+    height: auto;
+  }
+  .hero-content {
+    padding: 15% 5%;
+  }
+  .hero-image {
+    height: 400px;
+  }
+}
+
+
+/* =========================================
+   MODERN ECO-TECH FEATURES
+   ========================================= */
+.modern-features {
   padding: 100px 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
 }
-#about h3 {
-  font-size: 22px;
-  margin: 0 0 20px;
+
+/* Header Alignment */
+.modern-features .section-title {
+  text-align: left;
+  margin-bottom: 60px;
 }
-#about h2 {
+
+/* Restores and aligns the underline */
+.modern-features .section-title h2 {
   position: relative;
-  margin-bottom: 15px;
+  display: inline-block; /* Hugs the text width */
   padding-bottom: 15px;
 }
-#about h2::after {
+
+.modern-features .section-title h2::after {
+  display: block !important;
   position: absolute;
   content: "";
-  background: linear-gradient(to right, #fbbe5c 0%, #ffb463 100%);
+  background-color: #fbb65c; /* Solid brand color */
   height: 4px;
   width: 60px;
   bottom: 0;
-  left: 0;
+  left: 0; /* Change this to 'right: 0' if you literally want it on the right side of the word */
+  margin-left: 0;
 }
-#about .about-text li {
-  margin-bottom: 6px;
-  margin-left: 6px;
-  list-style: none;
+
+.modern-features .section-title p {
+  font-size: 18px;
+  color: #556b82;
+}
+
+/* CSS Grid Layout */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Individual Feature Cards */
+.feature-block {
+  background-color: #f8fafc; /* Very faint cool gray */
+  padding: 40px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Left-aligns contents */
+}
+
+.feature-block:hover {
+  background-color: #ffffff;
+  border-color: #fbb65c;
+  box-shadow: 0 10px 30px rgba(26, 43, 60, 0.05); /* Very subtle, sharp shadow on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.feature-block i.fa {
+  font-size: 32px;
+  color: #fbb65c;
+  margin-bottom: 25px;
+  /* Resetting the old template's heavy icon styles */
+  background: transparent !important;
+  box-shadow: none !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+}
+
+.feature-block h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a2b3c;
+  margin-bottom: 15px;
+  text-transform: none;
+}
+
+.feature-block p {
+  font-size: 15px;
+  color: #556b82;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+/* About Section */
+/* =========================================
+   MODERN ECO-TECH ABOUT SECTION
+   ========================================= */
+.modern-about {
+  padding: 100px 0;
+  background-color: #ffffff;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr; 
+  gap: 60px;
+  align-items: center; 
+}
+
+/* Document Frame (Left Side) */
+.about-image-wrapper {
+  background-color: #f8fafc; /* Very subtle cool-gray background */
+  padding: 40px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  box-shadow: none !important; /* Removes the dated shadow */
+  border: 1px solid #e2e8f0; /* Adds a crisp outline to the letter itself */
+}
+
+/* Typography (Right Side) */
+.about-text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.modern-about .section-title {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.modern-about .section-title h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: #1a2b3c;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+  margin-bottom: 0;
+}
+
+/* Mirrors the Features underline */
+.modern-about .section-title h2::after {
+  display: block;
+  position: absolute;
+  content: "";
+  background-color: #fbb65c; 
+  height: 4px;
+  width: 60px;
+  bottom: 0;
+  right: 0;
+}
+
+.about-text-content p {
+  font-size: 16px;
+  color: #556b82;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.about-text-content h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a2b3c;
+  margin-bottom: 25px;
+}
+
+/* Two-Column Value Badges */
+.modern-list ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px; 
   padding: 0;
+  margin: 0;
+  list-style: none;
 }
-#about .about-text li:before {
-  content: "\f00c";
+
+.modern-list li {
+  background-color: #f8fafc; /* Gives the item physical structure */
+  border: 1px solid #e2e8f0;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 600; /* Bolder text for better scanning */
+  color: #1a2b3c;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+/* Adds an interactive feel to guide the user's focus */
+.modern-list li:hover {
+  background-color: #ffffff;
+  border-color: #fbb65c;
+  box-shadow: 0 4px 12px rgba(26, 43, 60, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Force-render the checkmark */
+.modern-list li::before {
+  content: "\f00c"; 
   font-family: "FontAwesome";
-  color: #fbc95c;
-  font-size: 11px;
-  font-weight: 300;
-  padding-right: 8px;
+  color: #fbb65c;
+  font-size: 16px;
+  margin-right: 12px;
+  display: inline-block;
 }
-#about img {
-  width: 520px;
-  margin-top: 10px;
-  background: #fff;
-  border-right: 0;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.06);
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+  .modern-list ul {
+    grid-template-columns: 1fr;
+  }
 }
-#about p {
-  line-height: 24px;
-  margin: 30px 0;
+.certification-logos {
+  display: flex;
+  justify-content: flex-start; /* Aligns them to the left; use 'space-between' to push them to opposite edges */
+  align-items: center; /* Ensures both logos share the exact same horizontal midline */
+  gap: 40px; /* Consistent spacing between the two logos */
+  margin-top: 40px; /* Spacing from the list above */
+  padding-top: 25px;
+  border-top: 1px solid #e2e8f0; /* Optional: A clean separator line to anchor them */
+}
+
+/* Enlarge the certification logos */
+.certification-logos img {
+  max-height: 95px; /* Bumped up from 65px */
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.certification-logos img:hover {
+  filter: grayscale(0%); /* Optional: Returns full color when hovered */
 }
 /* Services Section */
 #services {
