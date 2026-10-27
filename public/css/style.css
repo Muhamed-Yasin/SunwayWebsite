@@ -1272,6 +1272,30 @@ body {
   color: #556b82;
   line-height: 1.4;
 }
+
+/* =========================================
+   MODERN ECO-TECH FOOTER
+   ========================================= */
+.modern-footer {
+  background-color: #0f172a;
+  padding: 30px 0;
+  border-top: 4px solid #fbb65c;
+  text-align: center;
+  width: 100%;
+}
+
+.modern-footer .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modern-footer p {
+  color: #94a3b8;
+  font-size: 14px;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
 /* =========================================
    MOBILE RESPONSIVENESS FIXES (Max 768px)
    ========================================= */
