@@ -5,7 +5,7 @@ export const Footer = () => {
     <footer id="footer" className="modern-footer">
       <div className="container">
         <p>
-          &copy; {new Date().getFullYear()} Sunway Energy Solutions. All Rights Reserved. Designed for Kerala's Solar Future.
+          &copy; {new Date().getFullYear()} Sunway Energy Solutions. All Rights Reserved. Powering Kerala's Solar Revolution from Our Kochi Headquarters.
         </p>
       </div>
     </footer>

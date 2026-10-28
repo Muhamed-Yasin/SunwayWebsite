@@ -365,12 +365,13 @@ a {
 
 /* Document Frame (Left Side) */
 .about-image-wrapper {
-  background-color: #f8fafc; /* Very subtle cool-gray background */
-  padding: 40px;
+  background-color: #f8fafc; 
+  padding: 20px; /* Reduced padding to make the image taller */
   border: 1px solid #e2e8f0;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%; /* Fills the stretched left column */
 }
 
 .about-image-wrapper img {
@@ -384,11 +385,13 @@ a {
 .about-text-content {
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* Pushes text up, logos down */
+  height: 100%;
 }
 
 .modern-about .section-title {
-  margin-bottom: 30px;
   text-align: left;
+  margin-bottom: 40px !important; 
 }
 
 .modern-about .section-title h2 {
@@ -419,7 +422,8 @@ a {
   font-size: 16px;
   color: #556b82;
   line-height: 1.8;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
+  margin-top: 0; /* Ensures paragraph aligns perfectly with the top of the letter */
 }
 
 .about-text-content h3 {
@@ -488,7 +492,7 @@ a {
 
 /* Enlarge the certification logos */
 .certification-logos img {
-  max-height: 95px; /* Bumped up from 65px */
+  max-height: 130px !important; /* Bumped up from 65px */
   width: auto;
   object-fit: contain;
   filter: grayscale(100%);
@@ -1107,6 +1111,16 @@ a {
   .contact-form-section {
     padding: 30px 20px;
   }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about-image-wrapper {
+    height: auto; /* Disables forced height on mobile */
+  }
+  .certification-logos img {
+    max-height: 90px !important; /* Scales down slightly for phones */
+  }
 }
 
 /* Prevent horizontal overflow globally */
@@ -1402,6 +1416,7 @@ body {
     margin: 0 !important;
     padding: 0 !important;
     gap: 20px !important;
+    align-items: stretch !important;
   }
 
   /* Shrink internal padding to stop text from stretching the card */
